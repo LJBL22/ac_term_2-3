@@ -1,0 +1,175 @@
+/**************************************
+FIXED LAYOUT CSS
+**************************************/
+
+.wrapper {
+  display: flex;
+  margin: 50px auto;
+}
+
+/**************************************
+CSS TO MAKE THE EXAMPLE LOOK PRETTY
+**************************************/
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: #FFF;
+  color: #FFF;
+  font-family: 'Open Sans';
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+.one,
+.two,
+.three,
+.four,
+.five,
+.six,
+.seven {
+  background-color: #163A59;
+  color: #FF6600;
+  border: 2px solid;
+  box-sizing: border-box;
+  min-height: 100px;
+  min-width: 160px;
+  line-height: 100px;
+}
+
+
+/* Code starts here */
+
+/* 觀摩 MA + 同學寫法追加優化 */
+
+.wrapper {
+  flex-flow: row wrap;
+  max-width: 900px;
+}
+
+.one,
+.two,
+.three,
+.four,
+.five,
+.six,
+.seven {
+  width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+
+  .two,
+  .three,
+  .five,
+  .six {
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .one {
+    flex-basis: 60%;
+  }
+
+  .two,
+  .five,
+  .seven {
+    flex: 1;
+    /* 1 1 0% */
+    /* grow 發揮效果，此三 div 負責填滿剩餘空間 */
+  }
+
+  .three,
+  .four {
+    flex-basis: 30%;
+  }
+}
+
+/* 其實乖乖寫 width: xx% 答案會更精簡 */
+/* 秀出來只是提醒 flex 的概念 */
+
+/* flex-basis: 50%; */
+/* width: 50% */
+/* flex: 0 50% */
+/* 三者相同，都沒有受到 grow 干擾； flex: 50% 就母湯 */
+
+
+
+
+/* 原先寫法 */
+/* .wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+} */
+
+/* 其實這裡就可以直接寫 row wrap 了 (必須搭配 1-7 w:100%)*/
+
+/* 最上面程式碼已經寫過 display:flex */
+/* 多了 width: 100% 然後沒有下面這堆 */
+/* 但在下一個 breakpoint 1,4,7 有 width:100% */
+/* 我想是因為 column 就有作用，所以只要設定好 wrapper = container 就好 */
+/* .one,
+.two,
+.three,
+.four,
+.five,
+.six,
+.seven { */
+/* flex-basis: 100%; */
+/* 0 1 100% */
+
+/* flex: 100%; */
+/* 會變滿寬喔！  */
+/* flex-grow: 1; */
+/* width: 100%;
+} */
+
+/* @media screen and (min-width: 600px) {
+
+  .wrapper {
+    flex-flow: wrap;
+  }
+
+  .two,
+  .three,
+  .five,
+  .six {
+    flex: 50%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .one {
+    flex: 60%;
+  }
+
+  .two {
+    flex: 40%;
+  }
+  
+  .three,
+  .four {
+    flex: 30%
+  }
+
+  .five {
+    flex: 40%;
+  }
+
+  .six,
+  .seven {
+    flex: 50%;
+  }
+
+} */
+/* 一樣數值可以集中寫： 2,5 */

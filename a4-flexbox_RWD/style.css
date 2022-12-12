@@ -1,0 +1,178 @@
+/**************************************
+FIXED LAYOUT CSS
+**************************************/
+
+.wrapper {
+  margin: 50px auto;
+  overflow: hidden;
+}
+
+
+/**************************************
+CSS TO MAKE THE EXAMPLE LOOK PRETTY
+**************************************/
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: #FFF;
+  color: #FFF;
+  font-family: 'Open Sans';
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+.one,
+.two,
+.two-a,
+.two-b,
+.two-c,
+.three,
+.img {
+  border: 2px solid;
+  box-sizing: border-box;
+}
+
+.one,
+.two,
+.three {
+  padding: 20px;
+  background-color: #163A59;
+  color: #FF6600;
+}
+
+.two-a,
+.two-b,
+.two-c {
+  padding: 15px;
+  font-size: 30px;
+  margin: 10px;
+  background-color: #36C1CE;
+  color: #FFF;
+}
+
+.two-a {
+  min-height: 200px;
+  padding: 0;
+}
+
+.img {
+  padding: 40px;
+  font-size: 20px;
+  background-color: #FF6600;
+  color: #163A59;
+}
+
+/* 以下開始撰寫你的程式碼 */
+/* mobile first 先從小畫面 (w < 620px)開始思考 */
+.two-a {
+  display: flex;
+  /* 以下兩行可以合併成 flex-flow: row wrap; */
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* 思考超過 620px 的畫面變動 */
+@media screen and (min-width: 620px) {
+
+  /* 預設是 block 所以 1, 2, 3 會佔滿一行 */
+  .wrapper {
+    display: flex;
+  }
+
+  /* 1, (2), 3 填滿剩餘空間 */
+  .one,
+  .three {
+    /* 寫法一 */
+    flex-grow: 1;
+    /*  = flex: 1 1 auto  */
+    /*  flex-basis = content size 接著 grow 填滿剩餘空間*/
+
+    /* 寫法二 */
+    /*    flex: 1  */
+    /* 注意： 與 flex: 1 些微不同，但結果相同 */
+    /* flex: 1 = 1 1 0% */
+    /*  basis 是 0 所以 content-size = 0，接著 flex-grow 讓他從 0 增長至整個剩餘空間  */
+    /* flex = (flex-grow 數字; flex-shrink 數字; flex-basis 數值 or %) */
+
+    /* 寫法三 */
+    /*     flex: 20%; */
+    /*  也就是 1 1 20% */
+  }
+
+  /* 但其中 div two 固定佔 60% */
+  .two {
+    flex-basis: 60%;
+  }
+
+  /*  content size = 328
+  final show = 328 + 44 = 372 (620 的 60%)*/
+
+}
+
+
+
+/* 題目要求 */
+
+/* 在小於 620px 的螢幕上，元素 1、2 和 3 必須垂直堆疊 (Column Drop)  */
+
+/* 在大於或等於 620px 的螢幕： 元素 2 的寬度是 `.wrapper` 的 60%。  */
+
+/* 元素 2 是一個 flexbox，內含 2a (包含圖片的元素)、2b 和 2c 三個 flex items  */
+
+/* 元素 1 和 3 寬度相等，可以隨著 viewport 增大，並填滿剩餘空間。  */
+
+/* 元素 2a (有圖片的那個) 也是一個 flexbox，主軸為水平方向，圖片 item 平均分佈在容器空間裡，並且垂直置中。 */
+/* flex row space-evenly center */
+
+
+/* 寫法二 */
+/* .wrapper {
+  display:flex;
+  flex-direction: column;
+}
+
+.two {
+  display:flex
+  flex-flow: column;
+}
+
+.two-a {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+} 
+
+ .one, .three {
+   display:flex;
+   flex: 1;
+   justify-content: center;
+  }
+
+如果不寫這組，那大於 620 要寫
+.one, .three {
+flex-basis: 20%
+}
+暫時還沒想清楚為何
+
+@media screen and (min-width: 620px) {
+  .wrapper {
+    flex-direction: row
+  }
+  
+  .two {
+    flex-basis: 60%
+  }
+}
+ */

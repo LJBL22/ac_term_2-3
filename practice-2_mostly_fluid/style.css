@@ -1,0 +1,122 @@
+/**************************************
+CSS TO MAKE THE EXAMPLE LOOK PRETTY
+**************************************/
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: #FFF;
+  color: #FFF;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+.wrapper {
+  margin: 50px auto;
+  padding: 0 10px;
+}
+
+header {
+  background-color: #163A59;
+}
+
+footer {
+  background-color: #212738;
+}
+
+main {
+  background-color: #FF6600;
+}
+
+aside {
+  background-color: #808080;
+}
+
+nav {
+  background-color: #36C1CE;
+}
+
+header,
+footer {
+  padding: 20px 0;
+}
+
+/**************************************
+DEFAULT LAYOUT (less than 600px)
+**************************************/
+
+header,
+nav,
+main,
+aside,
+footer {
+  width: 100%;
+}
+
+nav {
+  max-height: 80px;
+  line-height: 80px;
+}
+
+aside,
+main {
+  min-height: 400px;
+  line-height: 400px;
+}
+
+/**************************************
+WRITE YOUR CODE
+**************************************/
+
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 900px;
+}
+
+/* 0 1 auto */
+/* 看起來變大以後還是 row 的形式 */
+
+@media screen and (min-width: 600px) {
+
+  main {
+    flex: 70%;
+    /* 1 1 70% */
+    /* width: 70%; */
+  }
+
+  aside {
+    flex-basis: 30%;
+    /* 0 1 30% */
+    /* width: 30%; */
+  }
+}
+
+@media screen and (min-width: 900px) {
+  main {
+    flex: 60%;
+  }
+
+  nav,
+  aside {
+    flex: 20%;
+  }
+
+  nav {
+    max-height: fit-content;
+    line-height: 400px;
+  }
+
+  /* .wrapper {
+    max-width: 900px;
+  } */
+  /* 這在原本的 wrapper 紀錄就可以 */
+}

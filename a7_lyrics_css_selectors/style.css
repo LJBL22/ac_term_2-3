@@ -1,0 +1,97 @@
+html,
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  background: #F2EDE4;
+}
+
+section {
+  height: auto;
+  padding: 10px;
+  margin: 20px auto;
+  color: #000;
+  background: #ffffff;
+}
+
+
+/* my styles */
+.container {
+  position: relative;
+  width: 500px;
+  height: auto;
+  min-width: 60%;
+  min-height: 80%;
+  padding: 10px;
+  background: #4393D9;
+  box-shadow: -4px 4px 10px 3px rgba(50, 50, 50, 0.75);
+}
+
+.title {
+  color: #f5f1da;
+  text-align: center;
+}
+
+/* 011 */
+span:hover {
+  color: #000;
+  background: #ff0;
+}
+
+/* 011 */
+span.highlight {
+  padding: 5px 5px 2px 5px;
+  margin: auto 5px;
+  border-radius: 5px;
+  height: 16px;
+  background: #FF6600;
+  color: #fff;
+}
+
+/* 請撰寫其他的選擇器來覆蓋 .highlight 的效果！ */
+
+/* hover 效果 */
+/* 020 */
+.highlight:hover {
+  color: #000;
+  background: #ff0;
+}
+
+/* 031 */
+/* .app-section p .highlight:hover {
+  color: #000;
+  background: #ff0;
+} */
+
+/* 橘改黑底效果 */
+/* 逐步演化，原本寫最下面的答案，後來意識到可以跟原本的程式碼級別相同(0-1-1)，由於順序後寫就會覆蓋過去、進而再優化級別。 */
+/* 011 */
+span:only-child {
+  background: #000;
+}
+
+/* 從此而來 標籤[屬性="值"] 
+<span class="highlight"> */
+
+/* 011 */
+/* span[class~="highlight"] {
+  background: #000;
+} */
+
+/* 021 */
+/* .app-section span.highlight {
+  background: #000;
+} */
+
+/* 021 */
+/* .app-section span:only-child {
+  background: #000;
+} */
+
+/* 022 */
+/* .app-section>p>span:only-child {
+  background: #000;
+}  */

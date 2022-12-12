@@ -1,0 +1,115 @@
+/**************************************
+FIXED LAYOUT CSS
+**************************************/
+
+.wrapper {
+  margin: 50px auto;
+  overflow: hidden;
+}
+
+
+/**************************************
+CSS TO MAKE THE EXAMPLE LOOK PRETTY
+**************************************/
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: #FFF;
+  color: #FFF;
+  font-family: 'Open Sans';
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+.one,
+.two,
+.two-a,
+.two-b,
+.two-c,
+.three,
+.img {
+  border: 2px solid;
+  box-sizing: border-box;
+}
+
+.one,
+.two,
+.three {
+  padding: 20px;
+  background-color: #163A59;
+  color: #FF6600;
+}
+
+.two-a,
+.two-b,
+.two-c {
+  padding: 15px;
+  font-size: 30px;
+  margin: 10px;
+  background-color: #36C1CE;
+  color: #FFF;
+}
+
+.two-a {
+  min-height: 200px;
+  padding: 0;
+}
+
+.img {
+  padding: 40px;
+  font-size: 20px;
+  background-color: #FF6600;
+  color: #163A59;
+}
+
+/* 以下開始撰寫你的程式碼 */
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  /* 這行是為了讓 123 在小畫面分行 */
+
+}
+
+.two-a {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.one,
+.two,
+.three {
+  flex-grow: 1;
+}
+
+/* flex-grow: 1; 是給 item 用的，不是 container */
+
+@media screen and (min-width: 620px) {
+  .two {
+    flex-basis: 60%
+  }
+}
+
+
+
+/* 在小於 620px 的螢幕上，元素 1、2 和 3 必須垂直堆疊 (Column Drop)  */
+
+/* 在大於或等於 620px 的螢幕： 元素 2 的寬度是 `.wrapper` 的 60%。  */
+
+/* 元素 2 是一個 flexbox，內含 2a (包含圖片的元素)、2b 和 2c 三個 flex items  */
+
+/* 元素 1 和 3 寬度相等，可以隨著 viewport 增大，並填滿剩餘空間。  */
+
+/* 元素 2a (有圖片的那個) 也是一個 flexbox，主軸為水平方向，圖片 item 平均分佈在容器空間裡，並且垂直置中。 */
+/* flex row space-evenly center */

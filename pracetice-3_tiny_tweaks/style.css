@@ -1,0 +1,52 @@
+.container {
+  font-family: 'Open Sans';
+  font-size: 20px;
+  padding: 1em;
+}
+
+/* 從 1em=20px 反推，為何這裡的 padding 預設是 20px? */
+
+h1 {
+  /* font-size: 32px; */
+  font-size: 1.4em;
+  /* 從 container 20px 過來，希望是28px，
+  因此 20*1.4 = 28 */
+}
+
+p {
+  /* font-size: 18px; */
+  font-size: 0.8em;
+  /* 20*.8=16px */
+  line-height: 1.5;
+  margin-bottom: 2em;
+}
+
+/* 平板練習 */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  p {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  h1 {
+    font-size: 1.6em;
+  }
+
+  p {
+    font-size: 1em;
+    line-height: 1.6;
+  }
+}
+
+/* MDN line-height 有提到，建議寫 number rather than length(em) 會有不預期的情況出現*/
+/* static vs relative measurements */
