@@ -14,3 +14,28 @@
   text-align: center;
   border: 2px solid;
 }
+
+/* 案例示範 grid-column */
+/* .wrapper {
+  grid-template-rows: 75px 75px 75px;
+}
+
+.item1 {
+  grid-column: 1/4;
+} */
+
+/* 嘗試玩 grid-row */
+
+.wrapper {
+  grid-template-columns: 100px 100px 100px 100px;
+}
+
+/* 兩者寫法一樣 */
+/* .item1 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+} */
+
+.item1 {
+  grid-row: 1/3;
+}
