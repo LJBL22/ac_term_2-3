@@ -1,0 +1,14 @@
+.wrapper div {
+  background-color: #163a59;
+  font-family: 'Open Sans';
+  font-size: 30px;
+  color: #FF6600;
+  text-align: center;
+  border: 2px solid;
+}
+
+/* 建立一個有四個直欄和兩個橫列的 grid (總共會有八個 grid item)。
+第一欄和第二欄的寬度應該各為 200px。
+第三欄和第四欄的寬度應該各為 100px。
+兩個橫列的高度應該分別為 50px 和 100px。
+在橫列之間有 20px 的間隔，直欄之間則有 10px 的間隔。 */
