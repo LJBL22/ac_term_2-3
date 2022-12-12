@@ -43,3 +43,13 @@ body {
   min-height: 100px;
   line-height: 100px;
 }
+
+/* 使用 Mobile First 原則
+
+只能用 CSS Grid 來佈局
+
+在小於 576px 的螢幕，所有元素都呈垂直堆疊並佔滿 container 的全部寬度
+
+在介於 576px 到 992px 的螢幕上，元素 1、4 和 7 維持全寬，而元素 2、3、5 和 6 的寬度是container <div> 寬度的一半。
+
+在大於等於 992px 的螢幕上，排版呈現如上圖。而且container的寬度永遠不超過 992px。元素 1 和 6 是 container 寬度的 25%；元素 3 和 4 是 50%；元素 2 和 5 是75%；而元素 7 繼續維持全寬。 */
