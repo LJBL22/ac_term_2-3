@@ -13,9 +13,20 @@
 兩個橫列的高度應該分別為 50px 和 100px。
 在橫列之間有 20px 的間隔，直欄之間則有 10px 的間隔。 */
 
+/* 原始寫法 */
 .wrapper {
   display: grid;
   grid-template-columns: 200px 200px 100px 100px;
   grid-template-rows: 50px 100px;
   grid-gap: 20px 10px;
 }
+
+/* 觀摩寫法 */
+
+.wrapper {
+  grid-template-columns: repeat(2, 200px) repeat(2, 100px);
+  gap: 20px 10px;
+}
+
+/* 利用 repeat(num, length) 來精簡程式碼 */
+/* 已不建議 grid-gap ，建議以 gap 取代 */
