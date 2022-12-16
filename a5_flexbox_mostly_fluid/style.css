@@ -53,8 +53,15 @@ body {
 .wrapper {
   flex-flow: row wrap;
   max-width: 900px;
+  width: 100%;
 }
 
+/* 與以下相同 */
+.wrapper>* {
+  width: 100%;
+}
+
+/* 
 .one,
 .two,
 .three,
@@ -63,7 +70,7 @@ body {
 .six,
 .seven {
   width: 100%;
-}
+} */
 
 @media screen and (min-width: 600px) {
 
