@@ -178,4 +178,8 @@ body {
     /* 計算器，直白說就是 100% 扣除 100px 留個該圖片 */
     width: calc(100% - 100px);
   }
+
+  .action-list {
+    transform: unset;
+  }
 }
