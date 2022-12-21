@@ -96,6 +96,7 @@ body {
 
 /* 可是 HTML 中沒有誒！? 別急，先不理它！稍後揭曉彩蛋～～*/
 .content-wrapper>.seller-img {
+  display: none;
   width: 100px;
   height: 60px;
   border-radius: 10px;
@@ -124,8 +125,8 @@ body {
 }
 
 .action-list {
-  margin: auto 0;
   white-space: nowrap;
+  transform: translateX(30%)
 }
 
 .action-item {
@@ -134,8 +135,6 @@ body {
   width: 20px;
   height: 20px;
 }
-
-
 
 /* RWD 實作開始 */
 @media (min-width: 767px) {
@@ -159,15 +158,24 @@ body {
   }
 
   .content-wrapper {
-    position: relative;
+    display: flex;
     top: 0;
+    margin: 20px;
     /* padding-top: 20px; */
-    padding: 20px;
+    /* padding: 20px; */
     transition-duration: 0.3s;
   }
 
   /* 可是 HTML 中沒有誒！? 別急，先不理它！稍後揭曉彩蛋～～*/
-  .content-wrapper>.seller-img {}
+  .content-wrapper>.seller-img {
+    /* 是什麼？ > 繼承父元素的 display */
+    display: inherit;
+    margin-right: 15px;
+  }
 
-  .content-wrapper>.article {}
+  .content-wrapper>.article {
+    /* width: 80%; */
+    /* 計算器，直白說就是 100% 扣除 100px 留個該圖片 */
+    width: calc(100% - 100px);
+  }
 }
