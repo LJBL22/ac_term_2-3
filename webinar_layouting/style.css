@@ -1,0 +1,127 @@
+/* 圖片連結變數設定 */
+:root {
+  --icon-place-url: url("https://i.imgur.com/gOMVTJV.png");
+  --icon-love-url: url("https://i.imgur.com/qpgTmU9.png");
+  --icon-share-url: url("https://i.imgur.com/h0bMUGZ.png");
+}
+
+/* reset 樣式 */
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+/* 外部設定 */
+html,
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 客製的預設樣式，直接套用在標籤的 class 上就會生效！ */
+.bg-center {
+  background-size: cover;
+  background-position: center center;
+}
+
+.bg-contain {
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.icon-place {
+  background-image: var(--icon-place-url);
+}
+
+.icon-love {
+  background-image: var(--icon-love-url);
+}
+
+.icon-share {
+  background-image: var(--icon-share-url);
+}
+
+
+
+/* ====== 實作起始 ====== */
+.main-container {
+  width: 50%;
+  min-width: 300px;
+  height: 600px;
+  box-shadow: 0px 0px 30px -5px rgba(0, 0, 0, 0.25);
+  transition-duration: 0.3s;
+}
+
+.house-img {
+  width: 200px;
+  height: 200px;
+  background-image: url("https://images.unsplash.com/photo-1523217582562-09d0def993a6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80");
+  transition-duration: 0.3s;
+}
+
+.house-img>.seller-img-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-image: url("https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1494&q=80");
+}
+
+.content-wrapper {
+  position: relative;
+  transition-duration: 0.3s;
+}
+
+
+/* 可是 HTML 中沒有誒！? 別急，先不理它！稍後揭曉彩蛋～～*/
+.content-wrapper>.seller-img {
+  width: 100px;
+  height: 60px;
+  border-radius: 10px;
+  background-image: url("https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1494&q=80");
+}
+
+.article {}
+
+.article>.title {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.article>.content {
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.action-list {}
+
+.action-item {
+  width: 20px;
+  height: 20px;
+}
+
+
+
+/* RWD 實作開始 */
+@media (min-width: 767px) {
+  .main-container {
+    width: 500px;
+    height: 200px;
+  }
+
+  .house-img {}
+
+  .house-img>.seller-img-circle {}
+
+  .content-wrapper {}
+
+  /* 可是 HTML 中沒有誒！? 別急，先不理它！稍後揭曉彩蛋～～*/
+  .content-wrapper>.seller-img {}
+
+  .content-wrapper>.article {}
+}
