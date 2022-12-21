@@ -1,8 +1,8 @@
 /* 圖片連結變數設定 */
 :root {
-  --icon-place-url: url("https://i.imgur.com/gOMVTJV.png");
-  --icon-love-url: url("https://i.imgur.com/qpgTmU9.png");
-  --icon-share-url: url("https://i.imgur.com/h0bMUGZ.png");
+  --icon-place-url: url("https://reurl.cc/VDdLMQ");
+  --icon-love-url: url("https://reurl.cc/anWVel");
+  --icon-share-url: url("https://reurl.cc/9GK4Dj");
 }
 
 /* reset 樣式 */
@@ -23,11 +23,13 @@ body {
 }
 
 /* 客製的預設樣式，直接套用在標籤的 class 上就會生效！ */
+/* 目前兩張圖 */
 .bg-center {
   background-size: cover;
   background-position: center center;
 }
 
+/* icon */
 .bg-contain {
   background-size: contain;
   background-position: center center;
