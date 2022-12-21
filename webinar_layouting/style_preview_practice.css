@@ -60,19 +60,13 @@ body {
 }
 
 .house-img {
-  position: relative;
-  width: 100%;
-  min-width: 300px;
-  height: 600px;
-
-  /* overflow: hidden; */
+  width: 200px;
+  height: 200px;
   background-image: url("https://images.unsplash.com/photo-1523217582562-09d0def993a6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80");
   transition-duration: 0.3s;
 }
 
 .house-img>.seller-img-circle {
-  position: absolute;
-  bottom: -50px;
   width: 100px;
   height: 100px;
   border-radius: 50%;
