@@ -133,7 +133,6 @@ body {
 
 .action-list {
   white-space: nowrap;
-  /* transform: translateX(30%) */
 }
 
 .action-item {
@@ -146,18 +145,18 @@ body {
 /* RWD 實作開始 */
 @media (min-width: 767px) {
   .main-container {
+    /* 沿用 absolute */
     width: 500px;
     height: 200px;
   }
 
   .house-img {
-    position: absolute;
+    /* 沿用 relative */
+
+    width: 400px;
+    height: 400px;
     top: 0px;
-    width: 200px;
-    min-height: 200px;
-    right: 0px;
-    /* 不知為何沒作用 */
-    /* overflow: hidden; */
+    left: 500px;
   }
 
   .house-img>.seller-img-circle {
