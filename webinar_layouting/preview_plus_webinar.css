@@ -90,11 +90,7 @@ body {
   top: 60%;
   left: 10%;
   right: 10%;
-  /* padding-top: 20px; */
-  /* padding: 20px; */
-  /* margin: 0 auto; */
   width: 80%;
-  /* height: 80%; */
   transition-duration: 0.3s;
 }
 
@@ -133,6 +129,7 @@ body {
 
 .action-list {
   white-space: nowrap;
+  text-align: center;
 }
 
 .action-item {
@@ -152,7 +149,6 @@ body {
 
   .house-img {
     /* 沿用 relative */
-
     width: 400px;
     height: 400px;
     top: 0px;
@@ -166,9 +162,11 @@ body {
   .content-wrapper {
     display: flex;
     top: 0;
-    margin: 20px;
-    /* padding-top: 20px; */
-    /* padding: 20px; */
+    left: 5%;
+    right: 5%;
+    width: 90%;
+    margin-top: 38px;
+    padding-right: 40px;
     transition-duration: 0.3s;
   }
 
@@ -185,6 +183,6 @@ body {
   }
 
   .action-list {
-    transform: unset;
+    text-align: unset;
   }
 }
