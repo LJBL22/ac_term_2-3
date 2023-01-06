@@ -139,6 +139,12 @@ body {
       width: 200px;
     }
 
+    &--price,
+    &--starttime,
+    &--endtime {
+      position: relative;
+    }
+
     // &--price {
     //   width: 140px;
     // }
@@ -171,6 +177,11 @@ body {
   // }
 }
 
-// .header__cell__icon {
-//   cursor: pointer;
-// }
+.header__cell__icon {
+
+  // cursor: pointer;
+  &--right {
+    position: absolute;
+    right: 0px;
+  }
+}

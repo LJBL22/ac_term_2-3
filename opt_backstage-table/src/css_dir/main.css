@@ -102,6 +102,9 @@ body {
 .table__cell--description {
   width: 200px;
 }
+.table__cell--price, .table__cell--starttime, .table__cell--endtime {
+  position: relative;
+}
 .table__cell--action {
   width: 210px;
 }
@@ -111,6 +114,11 @@ body {
 }
 .cell__advertiser__line--group {
   color: #828282;
+}
+
+.header__cell__icon--right {
+  position: absolute;
+  right: 0px;
 }
 
 /*# sourceMappingURL=main.css.map */
