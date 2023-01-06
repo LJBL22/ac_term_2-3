@@ -63,3 +63,34 @@ html {
 }
 
 /* global end */
+
+body {
+  display: flex;
+  height: 100%;
+  min-height: 480px;
+  background: var(--background-grey);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  background: var(--main-dark);
+  padding-top: 30px;
+}
+
+.main {
+  flex: 1;
+  padding: 42px 50px 68px 50px;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.main__title {
+  margin-bottom: 34px;
+  font-size: 48px;
+}
+
+.main__table {
+  background: var(--table-background-color);
+}
