@@ -37,7 +37,6 @@ td {
 }
 
 /*reset end*/
-
 /* global */
 :root {
   --main-dark: #03396a;
@@ -63,7 +62,6 @@ html {
 }
 
 /* global end */
-
 body {
   display: flex;
   height: 100%;
@@ -94,3 +92,5 @@ body {
 .main__table {
   background: var(--table-background-color);
 }
+
+/*# sourceMappingURL=main.css.map */
