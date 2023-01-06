@@ -65,6 +65,8 @@ html {
 
 /* global end */
 
+/* style starts */
+
 body {
   display: flex;
   height: 100%;
@@ -93,5 +95,82 @@ body {
 
   &__table {
     background: $table-background-color;
+
+    /* ~ 是指該 el 後面的所有同層級 img，在這個案例原始 el 是 table ，而它甚至根本沒有排後面的同層級可選*/
+    /* .main__table 之下的所有 img (沒有管層級）*/
+    img {
+      cursor: pointer;
+    }
   }
 }
+
+.table {
+  &__header {
+    background: $header-color;
+    color: $header-text-color;
+  }
+
+  &__row {
+    height: 50px;
+    border-bottom: 1px solid $border-color;
+  }
+
+  &__cell {
+    text-align: center;
+    width: 140px;
+
+    &--checkbox {
+      width: 50px;
+    }
+
+    &--id {
+      width: 80px;
+    }
+
+    // &--name {
+    //   width: 140px;
+    // }
+
+    // &--advertiser {
+    //   width: 140px;
+    // }
+
+    &--description {
+      width: 200px;
+    }
+
+    // &--price {
+    //   width: 140px;
+    // }
+
+    // &--starttime {
+    //   width: 140px;
+    // }
+
+    // &--endtime {
+    //   width: 140px;
+    // }
+
+    &--action {
+      width: 210px;
+    }
+  }
+}
+
+.cell {
+  &__advertiser__line {
+    display: block;
+
+    &--group {
+      color: $table-grey-text;
+    }
+  }
+
+  // &__action__icon {
+  //   cursor: pointer;
+  // }
+}
+
+// .header__cell__icon {
+//   cursor: pointer;
+// }

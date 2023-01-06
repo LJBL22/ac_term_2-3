@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*reset */
 html {
   box-sizing: border-box;
@@ -45,6 +46,7 @@ html {
 }
 
 /* global end */
+/* style starts */
 body {
   display: flex;
   height: 100%;
@@ -72,6 +74,43 @@ body {
 }
 .main__table {
   background: #ffffff;
+  /* ~ 是指該 el 後面的所有同層級 img，在這個案例原始 el 是 table ，而它甚至根本沒有排後面的同層級可選*/
+  /* .main__table 之下的所有 img (沒有管層級）*/
+}
+.main__table img {
+  cursor: pointer;
+}
+
+.table__header {
+  background: #cdcdcd;
+  color: black;
+}
+.table__row {
+  height: 50px;
+  border-bottom: 1px solid #e4e4e4;
+}
+.table__cell {
+  text-align: center;
+  width: 140px;
+}
+.table__cell--checkbox {
+  width: 50px;
+}
+.table__cell--id {
+  width: 80px;
+}
+.table__cell--description {
+  width: 200px;
+}
+.table__cell--action {
+  width: 210px;
+}
+
+.cell__advertiser__line {
+  display: block;
+}
+.cell__advertiser__line--group {
+  color: #828282;
 }
 
 /*# sourceMappingURL=main.css.map */
