@@ -107,6 +107,34 @@ body {
 }
 .table__cell--action {
   width: 210px;
+  position: relative;
+}
+.table__cell--action .action__menu {
+  z-index: 999;
+  position: absolute;
+  right: 50%;
+  top: 100%;
+  width: 140px;
+  height: 120px;
+  background: var(--white);
+  border: 1px solid var(--border-color);
+}
+.table__cell--action .hidden {
+  display: none;
+}
+.table__cell--action .hidden .menu__body {
+  display: flex;
+  flex-direction: column;
+  padding-left: 12px;
+}
+.table__cell--action .hidden .menu__item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 40px;
+}
+.table__cell--action .hidden .menu__item__icon {
+  margin-right: 14px;
 }
 
 .cell__advertiser__line {
