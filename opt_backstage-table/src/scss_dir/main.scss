@@ -1,3 +1,5 @@
+@import "themes";
+
 /*reset */
 html {
   box-sizing: border-box;
@@ -39,28 +41,44 @@ td {
 /*reset end*/
 
 /* global */
-//嘗試將 root 改寫成 $ 變數
-// :root {
-$main-dark: #03396a;
-$grey-1: #e4e4e4;
-$background-grey: #f3f3f3;
-$main-color: #ff6500;
-$border-color: #e4e4e4;
-$zebra-color: #e9e9e9;
-$header-color: #cdcdcd;
-$table-grey-text: #828282;
-$white: white;
-$main-text-color: black;
-$header-text-color: black;
-$table-background-color: #ffffff;
-$logo-url: url("/static/icons/logo.svg");
-$darkmode-toggle-url: url("/static/icons/darkmode-on.svg");
+// $main-dark: #03396a;
+// $grey-1: #e4e4e4;
+// $background-grey: #f3f3f3;
+// $main-color: #ff6500;
+// $border-color: #e4e4e4;
+// $zebra-color: #e9e9e9;
+// $header-color: #cdcdcd;
+// $table-grey-text: #828282;
+// $white: white;
+// $main-text-color: black;
+// $header-text-color: black;
+// $table-background-color: #ffffff;
+// $logo-url: url("/static/icons/logo.svg");
+// $darkmode-toggle-url: url("/static/icons/darkmode-on.svg");
 // }
+
+// $main-dark: #3a3a3a;
+// $grey-1: #e4e4e4;
+// $background-grey: #202020;
+// $main-color: transparent;
+// $border-color: #e4e4e4;
+// $zebra-color: #575757;
+// $header-color: #2e2e2e;
+// $table-grey-text: rgba(255, 255, 255, 37%);
+// $white: white;
+// $main-text-color: white;
+// $header-text-color: #aaaaaa;
+// $table-background-color: #3a3a3a;
+// $logo-url: url("/icons/logo-dark.svg");
+// $darkmode-toggle-url: url("/icons/darkmode-off.svg");
+// 新增 dark mode 一併置換所有的變數
 
 html {
   font-size: 14px;
   height: 100%;
-  color: $main-text-color;
+  @include themify($themes) {
+    color: themed("main-text-color");
+  }
 }
 
 /* global end */
@@ -71,18 +89,24 @@ body {
   display: flex;
   height: 100%;
   min-height: 480px;
-  background: $background-grey;
+  @include themify($themes) {
+    background: themed("background-grey");
+  }
 }
 
 .sidebar {
   display: flex;
   flex-direction: column;
   width: 100px;
-  background: $main-dark;
+  @include themify($themes) {
+    background: themed("main-dark");
+  }
   padding-top: 30px;
   &__home {
     min-height: 64px;
-    background: $logo-url;
+    @include themify($themes) {
+      background-image: themed("logo-url");
+    }
     background-size: 100% 100%;
     margin-bottom: 83px;
     cursor: pointer;
@@ -99,7 +123,10 @@ body {
       width: 40px;
       height: 40px;
       &--active {
-        background: $white;
+        @include themify($themes) {
+          // 無效 是因為 import ?
+          background: themed("white-1");
+        }
       }
     }
     > div:not(:last-child) {
@@ -108,11 +135,13 @@ body {
   }
   &__darkmode {
     &__label {
-      background: $darkmode-toggle-url;
+      @include themify($themes) {
+        background-image: themed("darkmode-toggle-url");
+      }
       background-size: 100% 100%;
       cursor: pointer;
-      height: 100%;
-      width: 100%;
+      height: 70%;
+      width: 70%;
     }
     &__input {
       display: none;
@@ -132,8 +161,9 @@ body {
   }
 
   &__table {
-    background: $table-background-color;
-
+    @include themify($themes) {
+      background: themed("table-background-color");
+    }
     /* ~ 是指該 el 後面的所有同層級 img，在這個案例原始 el 是 table ，而它甚至根本沒有排後面的同層級可選*/
     /* .main__table 之下的所有 img (沒有管層級）*/
     img {
@@ -144,13 +174,18 @@ body {
 
 .table {
   &__header {
-    background: $header-color;
-    color: $header-text-color;
+    @include themify($themes) {
+      background: themed("header-color");
+      color: themed("header-text-color");
+    }
   }
 
   &__row {
     height: 50px;
-    border-bottom: 1px solid $border-color;
+    @include themify($themes) {
+      border-bottom: 1px solid themed("border-color");
+      color: themed(main-text-color);
+    }
   }
 
   &__cell {
@@ -165,14 +200,6 @@ body {
       width: 80px;
     }
 
-    // &--name {
-    //   width: 140px;
-    // }
-
-    // &--advertiser {
-    //   width: 140px;
-    // }
-
     &--description {
       width: 200px;
     }
@@ -183,30 +210,21 @@ body {
       position: relative;
     }
 
-    // &--price {
-    //   width: 140px;
-    // }
-
-    // &--starttime {
-    //   width: 140px;
-    // }
-
-    // &--endtime {
-    //   width: 140px;
-    // }
-
     &--action {
       width: 210px;
       position: relative;
       .action__menu {
-        z-index: 999;
+        z-index: 1;
         position: absolute;
         right: 50%;
         top: 100%;
         width: 140px;
         height: 120px;
-        background: $white;
-        border: 1px solid $border-color;
+        // background: white;
+        @include themify($themes) {
+          background: themed("table-background-color");
+          border: 1px solid themed("border-color");
+        }
         .menu__body {
           display: flex;
           flex-direction: column;
@@ -234,17 +252,14 @@ body {
     display: block;
 
     &--group {
-      color: $table-grey-text;
+      @include themify($themes) {
+        color: themed("table-grey-text");
+      }
     }
   }
-
-  // &__action__icon {
-  //   cursor: pointer;
-  // }
 }
 
 .header__cell__icon {
-  // cursor: pointer;
   &--right {
     position: absolute;
     right: 0px;

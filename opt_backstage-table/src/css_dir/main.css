@@ -1,4 +1,10 @@
 @charset "UTF-8";
+/*
+ * Theme definitions
+ */
+/*
+ * Implementation of themes
+ */
 /*reset */
 html {
   box-sizing: border-box;
@@ -42,7 +48,12 @@ td {
 html {
   font-size: 14px;
   height: 100%;
+}
+.theme-light html {
   color: black;
+}
+.theme-dark html {
+  color: #e4e4e4;
 }
 
 /* global end */
@@ -51,22 +62,37 @@ body {
   display: flex;
   height: 100%;
   min-height: 480px;
+}
+.theme-light body {
   background: #f3f3f3;
+}
+.theme-dark body {
+  background: #202020;
 }
 
 .sidebar {
   display: flex;
   flex-direction: column;
   width: 100px;
-  background: #03396a;
   padding-top: 30px;
+}
+.theme-light .sidebar {
+  background: #03396a;
+}
+.theme-dark .sidebar {
+  background: #3a3a3a;
 }
 .sidebar__home {
   min-height: 64px;
-  background: url("/static/icons/logo.svg");
   background-size: 100% 100%;
   margin-bottom: 83px;
   cursor: pointer;
+}
+.theme-light .sidebar__home {
+  background-image: url("/static/icons/logo.svg");
+}
+.theme-dark .sidebar__home {
+  background-image: url("/static/icons/logo-dark.svg");
 }
 .sidebar__menu {
   display: flex;
@@ -81,18 +107,26 @@ body {
   width: 40px;
   height: 40px;
 }
-.sidebar__menu__link--active {
+.theme-light .sidebar__menu__link--active {
+  background: white;
+}
+.theme-dark .sidebar__menu__link--active {
   background: white;
 }
 .sidebar__menu > div:not(:last-child) {
   margin-bottom: 55px;
 }
 .sidebar__darkmode__label {
-  background: url("/static/icons/darkmode-on.svg");
   background-size: 100% 100%;
   cursor: pointer;
-  height: 100%;
-  width: 100%;
+  height: 70%;
+  width: 70%;
+}
+.theme-light .sidebar__darkmode__label {
+  background-image: url("/static/icons/darkmode-on.svg");
+}
+.theme-dark .sidebar__darkmode__label {
+  background-image: url("/static/icons/darkmode-off.svg");
 }
 .sidebar__darkmode__input {
   display: none;
@@ -109,21 +143,37 @@ body {
   font-size: 48px;
 }
 .main__table {
-  background: #ffffff;
   /* ~ 是指該 el 後面的所有同層級 img，在這個案例原始 el 是 table ，而它甚至根本沒有排後面的同層級可選*/
   /* .main__table 之下的所有 img (沒有管層級）*/
+}
+.theme-light .main__table {
+  background: #ffffff;
+}
+.theme-dark .main__table {
+  background: #6b6b6b;
 }
 .main__table img {
   cursor: pointer;
 }
 
-.table__header {
+.theme-light .table__header {
   background: #cdcdcd;
   color: black;
 }
+.theme-dark .table__header {
+  background: #2e2e2e;
+  color: #aaaaaa;
+}
 .table__row {
   height: 50px;
+}
+.theme-light .table__row {
   border-bottom: 1px solid #e4e4e4;
+  color: black;
+}
+.theme-dark .table__row {
+  border-bottom: 1px solid #e4e4e4;
+  color: #e4e4e4;
 }
 .table__cell {
   text-align: center;
@@ -146,13 +196,19 @@ body {
   position: relative;
 }
 .table__cell--action .action__menu {
-  z-index: 999;
+  z-index: 1;
   position: absolute;
   right: 50%;
   top: 100%;
   width: 140px;
   height: 120px;
-  background: white;
+}
+.theme-light .table__cell--action .action__menu {
+  background: #ffffff;
+  border: 1px solid #e4e4e4;
+}
+.theme-dark .table__cell--action .action__menu {
+  background: #6b6b6b;
   border: 1px solid #e4e4e4;
 }
 .table__cell--action .action__menu .menu__body {
@@ -176,8 +232,11 @@ body {
 .cell__advertiser__line {
   display: block;
 }
-.cell__advertiser__line--group {
+.theme-light .cell__advertiser__line--group {
   color: #828282;
+}
+.theme-dark .cell__advertiser__line--group {
+  color: rgba(255, 255, 255, 0.37);
 }
 
 .header__cell__icon--right {
