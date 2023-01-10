@@ -119,22 +119,22 @@ body {
   background: var(--white);
   border: 1px solid var(--border-color);
 }
-.table__cell--action .hidden {
-  display: none;
-}
-.table__cell--action .hidden .menu__body {
+.table__cell--action .action__menu .menu__body {
   display: flex;
   flex-direction: column;
   padding-left: 12px;
 }
-.table__cell--action .hidden .menu__item {
+.table__cell--action .action__menu .menu__item {
   display: flex;
   align-items: center;
   cursor: pointer;
   height: 40px;
 }
-.table__cell--action .hidden .menu__item__icon {
+.table__cell--action .action__menu .menu__item__icon {
   margin-right: 14px;
+}
+.table__cell--action .hidden {
+  display: none;
 }
 
 .cell__advertiser__line {

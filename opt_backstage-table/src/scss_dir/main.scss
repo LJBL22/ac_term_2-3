@@ -169,9 +169,6 @@ body {
         height: 120px;
         background: var(--white);
         border: 1px solid var(--border-color);
-      }
-      .hidden {
-        display: none;
         .menu__body {
           display: flex;
           flex-direction: column;
@@ -186,6 +183,9 @@ body {
             margin-right: 14px;
           }
         }
+      }
+      .hidden {
+        display: none;
       }
     }
   }
