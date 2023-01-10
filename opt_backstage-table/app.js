@@ -11,14 +11,16 @@ input.addEventListener('click', toggleMenu)
 
 //dark mode
 //target the switch element
-const darkModeToggle = document.querySelector('dark__mode__toggle')
+const darkModeToggle = document.querySelector('#dark__mode__toggle')
 //toggle handler
 const darkModeToggleHandler = event => {
-  if (event.target.checked) {
-    document.documentElement.setAttribute('data-theme', 'dark')
-  } else {
-    document.documentElement.setAttribute('data-theme', 'light')
-  }
+  const switchMode = document.querySelector('#app-root')
+  switchMode.classList.toggle('theme-dark')
+  // if (event.target.checked) {
+  //   document.documentElement.setAttribute('data-theme', 'dark')
+  // } else {
+  //   document.documentElement.setAttribute('data-theme', 'light')
+  // }
 }
 //bind the event
-darkModeToggle.addEventListener('change', darkModeToggleHandler)
+darkModeToggle.addEventListener('click', darkModeToggleHandler)
