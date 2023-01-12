@@ -85,7 +85,8 @@
             <th class="table__cell table__cell--action">Action</th>
           </tr>
         </thead>
-        <tbody class="table__body">
+        <tbody class="table__body" id="table__body">
+          <!-- template starts-->
           <tr class="table__row">
             <td class="table__cell table__cell--checkbox">
               <input type="checkbox" />
@@ -120,21 +121,18 @@
                 <menu class="menu__body">
                   <menuitem class="menu__item">
                     <img
-                      src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/duplicate.svg"
+                      src="static/icons/duplicate.svg"
                       class="menu__item__icon"
                     />
                     <span>Duplicate</span>
                   </menuitem>
                   <menuitem class="menu__item">
-                    <img
-                      src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/edit.svg"
-                      class="menu__item__icon"
-                    />
+                    <img src="static/icons/edit.svg" class="menu__item__icon" />
                     <span>Edit</span>
                   </menuitem>
                   <menuitem class="menu__item">
                     <img
-                      src="https://raw.githubusercontent.com/ALPHACamp/WFE-data-table/0f97f3113bff18353154b8644eb0b31fff2a3bef/icons/delete.svg"
+                      src="static/icons/delete.svg"
                       class="menu__item__icon"
                     />
                     <span>Delete</span>
@@ -143,6 +141,7 @@
               </div>
             </td>
           </tr>
+          <!-- template end-->
         </tbody>
       </table>
     </main>
