@@ -167,6 +167,7 @@ body {
     /* ~ 是指該 el 後面的所有同層級 img，在這個案例原始 el 是 table ，而它甚至根本沒有排後面的同層級可選*/
     /* .main__table 之下的所有 img (沒有管層級）*/
     img {
+      // pointer-events: none;
       cursor: pointer;
     }
   }
