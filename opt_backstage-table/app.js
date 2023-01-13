@@ -1,35 +1,9 @@
-//target the input element
-const input = document.querySelector('#action__input_1')
-//click handler
-const toggleMenu = event => {
-  //target the menu element
-  const menu = document.querySelector('#action__menu_1')
-  menu.classList.toggle('hidden')
-}
-//bind the event
-input.addEventListener('click', toggleMenu)
-
-//dark mode
-//target the switch element
-const darkModeToggle = document.querySelector('#dark__mode__toggle')
-//toggle handler
-const darkModeToggleHandler = event => {
-  const switchMode = document.querySelector('#app-root')
-  switchMode.classList.toggle('theme-dark')
-  // if (event.target.checked) {
-  //   document.documentElement.setAttribute('data-theme', 'dark')
-  // } else {
-  //   document.documentElement.setAttribute('data-theme', 'light')
-  // }
-}
-//bind the event
-darkModeToggle.addEventListener('click', darkModeToggleHandler)
-
 const adList = [
   {
     id: 1,
     title: 'A',
     advertiser: "Lorem",
+    group: "JVMA",
     description: "ipsum dolor",
     price: 3000,
     start: "2023/1/1",
@@ -39,6 +13,7 @@ const adList = [
     id: 2,
     title: 'B',
     advertiser: "Lorem",
+    group: "VG",
     description: "ipsum dolor",
     price: 5000,
     start: "2023/1/1",
@@ -48,6 +23,109 @@ const adList = [
     id: 3,
     title: 'AC',
     advertiser: "Lorem",
+    group: "HHA",
+    description: "ipsum dolor",
+    price: 1000,
+    start: "2023/1/1",
+    end: "2023/4/30",
+  },
+  {
+    id: 4,
+    title: 'B',
+    advertiser: "Lorem",
+    group: "VG",
+    description: "ipsum dolor",
+    price: 5000,
+    start: "2023/1/1",
+    end: "2023/12/31",
+  },
+  {
+    id: 5,
+    title: 'A',
+    advertiser: "Lorem",
+    group: "JVMA",
+    description: "ipsum dolor",
+    price: 3000,
+    start: "2023/1/1",
+    end: "2023/6/30",
+  },
+  {
+    id: 6,
+    title: 'AC',
+    advertiser: "Lorem",
+    group: "HHA",
+    description: "ipsum dolor",
+    price: 1000,
+    start: "2023/1/1",
+    end: "2023/4/30",
+  },
+  {
+    id: 7,
+    title: 'B',
+    advertiser: "Lorem",
+    group: "VG",
+    description: "ipsum dolor",
+    price: 5000,
+    start: "2023/1/1",
+    end: "2023/12/31",
+  },
+  {
+    id: 8,
+    title: 'AC',
+    advertiser: "Lorem",
+    group: "HHA",
+    description: "ipsum dolor",
+    price: 1000,
+    start: "2023/1/1",
+    end: "2023/4/30",
+  },
+  {
+    id: 9,
+    title: 'AC',
+    title: 'A',
+    advertiser: "Lorem",
+    group: "JVMA",
+    description: "ipsum dolor",
+    price: 3000,
+    start: "2023/1/1",
+    end: "2023/6/30",
+  },
+  {
+    id: 10,
+    title: 'AC',
+    advertiser: "Lorem",
+    group: "HHA",
+    description: "ipsum dolor",
+    price: 1000,
+    start: "2023/1/1",
+    end: "2023/4/30",
+  },
+  {
+    id: 11,
+    title: 'AC',
+    advertiser: "Lorem",
+    group: "HHA",
+    description: "ipsum dolor",
+    price: 1000,
+    start: "2023/1/1",
+    end: "2023/4/30",
+  },
+  {
+    id: 12,
+    title: 'AC',
+    title: 'A',
+    advertiser: "Lorem",
+    group: "JVMA",
+    description: "ipsum dolor",
+    price: 3000,
+    start: "2023/1/1",
+    end: "2023/6/30",
+  },
+  {
+    id: 13,
+    title: 'AC',
+    advertiser: "Lorem",
+    group: "HHA",
     description: "ipsum dolor",
     price: 1000,
     start: "2023/1/1",
@@ -56,7 +134,28 @@ const adList = [
 ]
 
 const tableRow = document.querySelector('#table__body')
+const darkModeToggle = document.querySelector('#dark__mode__toggle')
 
+function toggleMenu({ target }) {
+  if (target.matches('.cell__action__icon')) {
+    const menu = target.nextElementSibling
+    menu.classList.toggle('hidden')
+  }
+}
+
+//dark mode
+const darkModeToggleHandler = event => {
+  const switchMode = document.querySelector('#app-root')
+  switchMode.classList.toggle('theme-dark')
+  //// 原寫法，搭配 change event
+  // if (event.target.checked) {
+  //   document.documentElement.setAttribute('data-theme', 'dark')
+  // } else {
+  //   document.documentElement.setAttribute('data-theme', 'light')
+  // }
+}
+
+  // IIFE: render table row
   ; (function () {
     adList.forEach((ad) => {
       tableRow.innerHTML += `
@@ -69,7 +168,7 @@ const tableRow = document.querySelector('#table__body')
       <td class="table__cell table__cell--advertiser">
         <span class="cell__advertiser__line">${ad.advertiser}</span>
         <span class="cell__advertiser__line cell__advertiser__line--group"
-          >Group</span
+          >${ad.group}</span
         >
       </td>
       <td class="table__cell table__cell--description">${ad.description}</td>
@@ -80,7 +179,7 @@ const tableRow = document.querySelector('#table__body')
         <img
           class="cell__action__icon"
           src="./static/icons/menu.svg"
-          id="action__input_1"
+          id="action__input_${ad.id}"
           alt="menu"
         />
         <!-- menu -->
@@ -88,8 +187,8 @@ const tableRow = document.querySelector('#table__body')
           class="action__menu hidden"
           role="dialog"
           aria-modal="true"
-          aria-labelledby="action__input_1"
-          id="action__menu_1"
+          aria-labelledby="action__input_${ad.id}"
+          id="action__menu_${ad.id}"
         >
           <menu class="menu__body">
             <menuitem class="menu__item">
@@ -120,3 +219,8 @@ const tableRow = document.querySelector('#table__body')
   `
     })
   })()
+
+// eventListener
+darkModeToggle.addEventListener('click', darkModeToggleHandler)
+
+tableRow.addEventListener('click', toggleMenu);
