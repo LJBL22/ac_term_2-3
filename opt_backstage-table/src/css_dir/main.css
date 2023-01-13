@@ -95,10 +95,10 @@ body {
   cursor: pointer;
 }
 .theme-light .sidebar__home {
-  background-image: url("./../static/icons/logo.svg");
+  background-image: url("../../static/icons/logo.svg");
 }
 .theme-dark .sidebar__home {
-  background-image: url("./../static/icons/logo-dark.svg");
+  background-image: url("../../static/icons/logo-dark.svg");
 }
 .sidebar__menu {
   display: flex;
@@ -129,10 +129,10 @@ body {
   width: 70%;
 }
 .theme-light .sidebar__darkmode__label {
-  background-image: url("./../static/icons/darkmode-on.svg");
+  background-image: url("../../static/icons/darkmode-on.svg");
 }
 .theme-dark .sidebar__darkmode__label {
-  background-image: url("./../static/icons/darkmode-off.svg");
+  background-image: url("../../static/icons/darkmode-off.svg");
 }
 .sidebar__darkmode__input {
   display: none;

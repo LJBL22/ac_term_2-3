@@ -16,8 +16,8 @@ $themes: (
     main-text-color: black,
     header-text-color: black,
     table-background-color: #ffffff,
-    logo-url: url("./../static/icons/logo.svg"),
-    darkmode-toggle-url: url("./../static/icons/darkmode-on.svg"),
+    logo-url: url("../../static/icons/logo.svg"),
+    darkmode-toggle-url: url("../../static/icons/darkmode-on.svg"),
     checked-row-color: #ff6500,
   ),
   dark: (
@@ -33,8 +33,8 @@ $themes: (
     main-text-color: #e4e4e4,
     header-text-color: #aaaaaa,
     table-background-color: #6b6b6b,
-    logo-url: url("./../static/icons/logo-dark.svg"),
-    darkmode-toggle-url: url("./../static/icons/darkmode-off.svg"),
+    logo-url: url("../../static/icons/logo-dark.svg"),
+    darkmode-toggle-url: url("../../static/icons/darkmode-off.svg"),
     checked-row-color: #622802,
   ),
 );
