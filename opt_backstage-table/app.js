@@ -136,13 +136,17 @@ const adList = [
 const tableRow = document.querySelector('#table__body')
 const darkModeToggle = document.querySelector('#dark__mode__toggle')
 
+function onCheckBox({ target }) {
+  const parent = target.closest('.table__row')
+  parent.classList.toggle('checked')
+}
+
 function toggleMenu({ target }) {
   if (target.matches('.cell__action__icon')) {
     const menu = target.nextElementSibling
     menu.classList.toggle('hidden')
   }
 }
-
 //dark mode
 const darkModeToggleHandler = event => {
   const switchMode = document.querySelector('#app-root')
@@ -154,7 +158,6 @@ const darkModeToggleHandler = event => {
   //   document.documentElement.setAttribute('data-theme', 'light')
   // }
 }
-
   // IIFE: render table row
   ; (function () {
     adList.forEach((ad) => {
@@ -222,5 +225,5 @@ const darkModeToggleHandler = event => {
 
 // eventListener
 darkModeToggle.addEventListener('click', darkModeToggleHandler)
-
 tableRow.addEventListener('click', toggleMenu);
+tableRow.addEventListener('change', onCheckBox)

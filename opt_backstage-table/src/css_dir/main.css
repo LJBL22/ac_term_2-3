@@ -43,6 +43,18 @@ td {
   text-align: initial;
 }
 
+.scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #0a4c95 #c2d2e4;
+}
+.scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 /*reset end*/
 /* global */
 html {
@@ -136,7 +148,6 @@ body {
   flex: 1;
   padding: 42px 50px 68px 50px;
   max-height: 100vh;
-  overflow-y: auto;
 }
 .main__title {
   margin-bottom: 34px;
@@ -174,6 +185,12 @@ body {
 .theme-dark .table__row {
   border-bottom: 1px solid #e4e4e4;
   color: #e4e4e4;
+}
+.theme-light .table__row.checked {
+  background-color: #ff6500;
+}
+.theme-dark .table__row.checked {
+  background-color: #622802;
 }
 .table__cell {
   text-align: center;

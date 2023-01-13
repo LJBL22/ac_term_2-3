@@ -38,6 +38,24 @@ td {
   text-align: initial;
 }
 
+.scrollbar {
+  // Firefox scrollbar setting
+  // overflow-y: scroll; 判斷不一定是 y 軸，所以這行寫在發生的區塊
+  scrollbar-width: thin; // no nums //約莫 9px auto 約莫 15px；accessibility 建議是統一用 auto
+  scrollbar-color: #0a4c95 #c2d2e4;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    //  background-color: #C2D2E4;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    //  width: 15px; 無效
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
 /*reset end*/
 
 /* global */
@@ -153,7 +171,7 @@ body {
   flex: 1;
   padding: 42px 50px 68px 50px;
   max-height: 100vh;
-  overflow-y: auto;
+  // overflow-y: auto;
 
   &__title {
     margin-bottom: 34px;
@@ -161,6 +179,7 @@ body {
   }
 
   &__table {
+    // overflow-y: scroll;
     @include themify($themes) {
       background: themed("table-background-color");
     }
@@ -180,12 +199,21 @@ body {
       color: themed("header-text-color");
     }
   }
+  // &__body {
+  //   height: 500px;
+  //   width: 100%;
+  // }
 
   &__row {
     height: 50px;
     @include themify($themes) {
       border-bottom: 1px solid themed("border-color");
       color: themed(main-text-color);
+    }
+    &.checked {
+      @include themify($themes) {
+        background-color: themed(checked-row-color);
+      }
     }
   }
 
