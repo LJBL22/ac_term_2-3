@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
  * Theme definitions
  */
@@ -149,13 +148,12 @@ body {
   font-size: 48px;
 }
 .main__table--wrapper {
+  position: relative;
   overflow-y: scroll;
-  height: 600px;
+  max-height: 80vh;
 }
 .main__table {
   min-width: 100%;
-  /* ~ 是指該 el 後面的所有同層級 img，在這個案例原始 el 是 table ，而它甚至根本沒有排後面的同層級可選*/
-  /* .main__table 之下的所有 img (沒有管層級）*/
 }
 .theme-light .main__table {
   background: #ffffff;
@@ -167,6 +165,11 @@ body {
   cursor: pointer;
 }
 
+.table__header {
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
 .theme-light .table__header {
   background: #cdcdcd;
   color: black;

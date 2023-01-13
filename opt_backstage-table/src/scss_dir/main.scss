@@ -66,6 +66,8 @@ td {
 // $darkmode-toggle-url: url("/static/icons/darkmode-on.svg");
 // }
 
+//// 新增 dark mode 一併置換所有的變數
+////  不用 css variable 改用 sass partial, mixin...
 // $main-dark: #3a3a3a;
 // $grey-1: #e4e4e4;
 // $background-grey: #202020;
@@ -80,7 +82,6 @@ td {
 // $table-background-color: #3a3a3a;
 // $logo-url: url("/icons/logo-dark.svg");
 // $darkmode-toggle-url: url("/icons/darkmode-off.svg");
-// 新增 dark mode 一併置換所有的變數
 
 html {
   font-size: 14px;
@@ -162,15 +163,16 @@ body {
   flex: 1;
   padding: 42px 50px 68px 50px;
   max-height: 100vh;
-  // overflow-y: auto;
 
   &__title {
     margin-bottom: 34px;
     font-size: 48px;
   }
   &__table--wrapper {
+    position: relative;
     overflow-y: scroll;
-    height: 600px;
+    // 讓整個視窗不要出現自動生成的 scrollbar
+    max-height: 80vh;
   }
 
   &__table {
@@ -178,10 +180,7 @@ body {
     @include themify($themes) {
       background: themed("table-background-color");
     }
-    /* ~ 是指該 el 後面的所有同層級 img，在這個案例原始 el 是 table ，而它甚至根本沒有排後面的同層級可選*/
-    /* .main__table 之下的所有 img (沒有管層級）*/
     img {
-      // pointer-events: none;
       cursor: pointer;
     }
   }
@@ -189,6 +188,9 @@ body {
 
 .table {
   &__header {
+    position: sticky;
+    top: 0;
+    z-index: 99;
     @include themify($themes) {
       background: themed("header-color");
       color: themed("header-text-color");
