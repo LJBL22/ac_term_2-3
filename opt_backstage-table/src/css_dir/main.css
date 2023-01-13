@@ -44,15 +44,10 @@ td {
 }
 
 .scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: #0a4c95 #c2d2e4;
+  scrollbar-width: none;
 }
 .scrollbar::-webkit-scrollbar {
-  width: 6px;
-}
-.scrollbar::-webkit-scrollbar-thumb {
-  border-radius: 3px;
-  background-color: rgba(0, 0, 0, 0.1);
+  width: 0px;
 }
 
 /*reset end*/
@@ -153,7 +148,12 @@ body {
   margin-bottom: 34px;
   font-size: 48px;
 }
+.main__table--wrapper {
+  overflow-y: scroll;
+  height: 600px;
+}
 .main__table {
+  min-width: 100%;
   /* ~ 是指該 el 後面的所有同層級 img，在這個案例原始 el 是 table ，而它甚至根本沒有排後面的同層級可選*/
   /* .main__table 之下的所有 img (沒有管層級）*/
 }

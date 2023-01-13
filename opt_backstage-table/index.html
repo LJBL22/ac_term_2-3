@@ -46,50 +46,54 @@
     </nav>
     <main class="main">
       <h1 class="main__title">Campaign</h1>
-      <table class="main__table">
-        <thead>
-          <tr class="table__header table__row">
-            <th class="table__cell table__cell--checkbox">
-              <input type="checkbox" />
-            </th>
-            <th class="table__cell table__cell--id">ID</th>
-            <th class="table__cell table__cell--name">Title</th>
-            <th class="table__cell table__cell--advertiser">
-              <span class="cell__advertiser__line">Advertiser</span>
-              <span class="cell__advertiser__line cell__advertiser__line--group"
-                >Group</span
-              >
-            </th>
-            <th class="table__cell table__cell--description">Description</th>
-            <th class="table__cell table__cell--price">
-              <span>Price</span>
-              <img
-                class="header__cell__icon header__cell__icon--right"
-                src="./static/icons/sort.svg"
-              />
-            </th>
-            <th class="table__cell table__cell--starttime">
-              <span>Start Time</span>
-              <img
-                class="header__cell__icon header__cell__icon--right"
-                src="./static/icons/sort.svg"
-              />
-            </th>
-            <th class="table__cell table__cell--endtime">
-              <span>End Time</span>
-              <img
-                class="header__cell__icon header__cell__icon--right"
-                src="./static/icons/sort.svg"
-              />
-            </th>
-            <th class="table__cell table__cell--action">Action</th>
-          </tr>
-        </thead>
-        <tbody class="table__body" id="table__body">
-          <!-- template starts-->
-          <!-- template end-->
-        </tbody>
-      </table>
+      <!-- add wrapper to make table scroller -->
+      <div class="main__table--wrapper scrollbar">
+        <table class="main__table">
+          <thead>
+            <tr class="table__header table__row">
+              <th class="table__cell table__cell--checkbox">
+                <input type="checkbox" />
+              </th>
+              <th class="table__cell table__cell--id">ID</th>
+              <th class="table__cell table__cell--name">Title</th>
+              <th class="table__cell table__cell--advertiser">
+                <span class="cell__advertiser__line">Advertiser</span>
+                <span
+                  class="cell__advertiser__line cell__advertiser__line--group"
+                  >Group</span
+                >
+              </th>
+              <th class="table__cell table__cell--description">Description</th>
+              <th class="table__cell table__cell--price">
+                <span>Price</span>
+                <img
+                  class="header__cell__icon header__cell__icon--right"
+                  src="./static/icons/sort.svg"
+                />
+              </th>
+              <th class="table__cell table__cell--starttime">
+                <span>Start Time</span>
+                <img
+                  class="header__cell__icon header__cell__icon--right"
+                  src="./static/icons/sort.svg"
+                />
+              </th>
+              <th class="table__cell table__cell--endtime">
+                <span>End Time</span>
+                <img
+                  class="header__cell__icon header__cell__icon--right"
+                  src="./static/icons/sort.svg"
+                />
+              </th>
+              <th class="table__cell table__cell--action">Action</th>
+            </tr>
+          </thead>
+          <tbody class="table__body" id="table__body">
+            <!-- template starts-->
+            <!-- template end-->
+          </tbody>
+        </table>
+      </div>
     </main>
   </body>
 </html>

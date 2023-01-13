@@ -39,20 +39,11 @@ td {
 }
 
 .scrollbar {
-  // Firefox scrollbar setting
-  // overflow-y: scroll; 判斷不一定是 y 軸，所以這行寫在發生的區塊
-  scrollbar-width: thin; // no nums //約莫 9px auto 約莫 15px；accessibility 建議是統一用 auto
-  scrollbar-color: #0a4c95 #c2d2e4;
+  scrollbar-width: none; // thin/auto
+  // scrollbar-color: #0a4c95 #c2d2e4;
 
   &::-webkit-scrollbar {
-    width: 6px;
-    //  background-color: #C2D2E4;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border-radius: 3px;
-    //  width: 15px; 無效
-    background-color: rgba(0, 0, 0, 0.1);
+    width: 0px;
   }
 }
 
@@ -177,9 +168,13 @@ body {
     margin-bottom: 34px;
     font-size: 48px;
   }
+  &__table--wrapper {
+    overflow-y: scroll;
+    height: 600px;
+  }
 
   &__table {
-    // overflow-y: scroll;
+    min-width: 100%;
     @include themify($themes) {
       background: themed("table-background-color");
     }
@@ -199,10 +194,6 @@ body {
       color: themed("header-text-color");
     }
   }
-  // &__body {
-  //   height: 500px;
-  //   width: 100%;
-  // }
 
   &__row {
     height: 50px;
