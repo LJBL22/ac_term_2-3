@@ -242,7 +242,6 @@ body {
         top: 100%;
         width: 140px;
         height: 120px;
-        // background: white;
         @include themify($themes) {
           background: themed("table-background-color");
           border: 1px solid themed("border-color");
